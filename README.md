@@ -31,4 +31,5 @@
 </ul>
 <hr>
 <h2>Các Contract của dự án</h2>
-
+<h4>Simple NFT Contract</h4>
+<img src="./img/market-contract.PNG" alt="Simple NFT Contract">
