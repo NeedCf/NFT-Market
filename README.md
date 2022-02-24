@@ -13,7 +13,7 @@
   <li>1. Truy cập IDE Remix online <a href="https://remix.ethereum.org/">link</a></li>
   <li>2. Thêm 2 file "market.sol" và "simple-NFT.sol" từ github</li>
   <li>3. Deloy 2 contract là Market và SimpleNFT</li>
-  <li>4. Tạo NFt</li>
+  <li>4. Tạo NFT</li>
   <ul>
     <li>1. Mint NFT bằng hàm mint trong SimpleNFT</li>
     <li>2. Lấy address của NFT và địa chỉ ví NFT</li>
@@ -30,3 +30,5 @@
   <li>7. Để test bước 6, có thể xem chủ sở hữu NFT bằng hàm "ownerOf" trong SimpleNFT</li>
 </ul>
 <hr>
+<h2>Các Contract của dự án</h2>
+
