@@ -1,0 +1,52 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "updatesBalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ether-units.sol": "Updated"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ether-units.sol": {
+			"keccak256": "0x3f81c503122d84852c64db35d684cf32dda993958eeee0eb8f3d1069daa6516b",
+			"urls": [
+				"bzz-raw://32d6315628c8d864aef9337c25e7c666a517ad4ee914e0c2e342dee4237f0e95",
+				"dweb:/ipfs/QmXAG5f5SRhhJkCyErRwsn4LZdUpLTidUmU6MZ9i5izA5y"
+			]
+		}
+	},
+	"version": 1
+}

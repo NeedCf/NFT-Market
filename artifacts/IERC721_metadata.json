@@ -1,0 +1,68 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"IERC721.sol": "IERC721"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"IERC721.sol": {
+			"keccak256": "0x2d5be545e3b5a2f9a72e9f00959eac3700303c95484e00a286d9f1254506cf31",
+			"urls": [
+				"bzz-raw://f59e936c08631b89c65324d2dc90729478cc0cebf04cba8616095eac13a987d8",
+				"dweb:/ipfs/QmVtBKHFYeQhScfTjb7sQg1zbAg8zPRmmrWop8ft3xYQL5"
+			]
+		}
+	},
+	"version": 1
+}
