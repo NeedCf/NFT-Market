@@ -13,7 +13,7 @@ contract Market {
     struct Listing {            // Item trong danh sách
         ListingStatus status;   // Trạng thái của 
         address seller;         // Địa chỉ ví của người bán
-        address token;          // Địa chỉ của token
+        address token;          // Địa chỉ của NFT
         uint tokenId;           // ID của token
         uint price;             // Giá của token trên sàn
     }
@@ -39,19 +39,18 @@ contract Market {
         address sender
     );
 
-    // Số lượng Token đã được đưa lên sàn
+    // Số lượng NFT đã được đưa lên sàn
     uint private _listingId = 0;
-    // Map chứa các token
+    // Map chứa các NFT
     mapping(uint => Listing) private _listings;
 
     // Hàm thực hiện lệnh đưa token lên sàn
     function listToken(address token, uint tokenId, uint price) external {
-        // Chuyển token đến địa chỉ của Market
+        // Chuyển NFT đến địa chỉ của Market
         IERC721(token).transferFrom(msg.sender, address(this), tokenId);
 
-
         // Tạo một item 
-        // Trạng thái item là Có thể mua
+        // Trạng thái NFT là Có thể mua
         // Địa chỉ người bán là ví của người thực hiện lệnh listToken
         Listing memory listing = Listing(
             ListingStatus.Active,
@@ -61,11 +60,12 @@ contract Market {
             price * 1 ether
         );
 
-        // Tăng số lượng item có trên sàn
+        // Tăng số lượng NFT đã lên sàn
         _listingId++;
         // Thêm item vào list item có trên sàn
         _listings[_listingId] = listing;
 
+        // Thông báo event đã list sàn
         emit Listed (
             _listingId,
             msg.sender,
@@ -85,7 +85,7 @@ contract Market {
     // Cần lấy số dư trong ví để kiểm tra xem có đủ để mua token
     //      hay không
     function buyToken(uint listingId) external payable{
-        // Chọn vào item cần mua
+        // Chọn vào NFT cần mua
         Listing storage listing = _listings[listingId];
 
         // Người mua phải khác người bán
@@ -100,20 +100,23 @@ contract Market {
         require(listing.status == ListingStatus.Active, "Listing is not active");
         
         // Số tiền trong ví người mua phải lớn hơn hoặc bằng
-        //      với giá của token, nếu không
+        //      với giá của NFT, nếu không
         //      thông báp "Không đủ để thanh toán"  
         require(msg.value >= listing.price, "Insufficient payment");
 
+        // Chuyển trạng thái NFT về đã mua
         listing.status = ListingStatus.Sold;
         
         // Nếu tất cả các kiểm tra trên đúng nghĩa là người dùng đủ
         //      điều kiện mua, ta chuyển token đến ví của người mua
         IERC721(listing.token).transferFrom(address(this), msg.sender, listing.tokenId);
-        
+
         // Chuyển tiền cho người bán token
         // Số tiền chuyển bằng với giá token lúc list sàn
         payable(listing.seller).transfer(listing.price);
 
+
+        // Thông báo event đã bán
         emit Sale (
             listingId,
             msg.sender,
@@ -123,17 +126,27 @@ contract Market {
         );
     } 
 
+    // Hàm thu hồi NFT khỏi list
     function cancel(uint listingId) public {
-        // Chọn vào item cần bỏ khỏi sàn
+        // Chọn vào NFT cần bỏ khỏi sàn
         Listing storage listing = _listings[listingId];
         
+        // Người hủy NFT khỏi list phải là người bán
+        // Nếu không, thông báo "Chỉ người bán mới 
+        //      có thể hủy bỏ danh sách"
         require(msg.sender == listing.seller, "Only seller can cancel listing");
+        // NFT phải đang ở trạng thái sẵn sàng
+        // Nếu không, thông báo "Danh sách không hoạt động"
         require(listing.status  == ListingStatus.Active, "Listing is not active");
 
+        // Nếu kiểm tra tất cả thành công
+        // Trạng thái của NFT trên sàn trở thành đã đưa về ví
         listing.status = ListingStatus.Cancelled;
 
+        // NFT được trả về ví người bán
         IERC721(listing.token).transferFrom(address(this), msg.sender, listing.tokenId);
 
+        // Thông báo event đã cancel
         emit Cancel(listingId, listing.seller);
     }
 }
