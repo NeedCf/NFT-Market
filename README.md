@@ -4,6 +4,7 @@
 <ul>
   <li>Install Nodejs <a href="https://nodejs.org/en/">link</a></li>
   <li>Install Ganache <a href="https://trufflesuite.com/ganache/index.html">link</a></li>
+  <li>$ npm install -g truffle</li>  
   <li>$ truffle migrate --network development</li>  
   <li>$ truffle console</li>  
   <li>Create NFT</li> 
