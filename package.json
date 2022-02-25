@@ -1,0 +1,22 @@
+{
+  "name": "nft-market",
+  "version": "1.0.0",
+  "description": "<h1>Đây là một dự án chợ NFT đơn giản</h1>\r <hr>\r <h2>Các tính năng cơ bản gồm:</h2>\r <ul>\r   <li>Tạo ra NFT</li>\r   <li>Đăng bán NFT trên Marketplace</li>\r   <li>Thu hồi NFT đã đăng lên Marketplace</li>\r   <li>Mua NFT trên Marketplace</li>\r </ul>\r <hr>\r <h2>Để chạy thử dự án ta có thể làm như sau: </h2>\r <ul>\r   <li>1. Truy cập IDE Remix online <a href=\"https://remix.ethereum.org/\">link</a></li>\r   <li>2. Thêm 2 file \"market.sol\" và \"simple-NFT.sol\" từ github</li>\r   <li>3. Deloy 2 contract là Market và SimpleNFT</li>\r   <li>4. Tạo NFT</li>\r   <ul>\r     <li>1. Mint NFT bằng hàm mint trong SimpleNFT</li>\r     <li>2. Lấy address của NFT và địa chỉ ví NFT</li>\r   </ul>\r   <li>5. Đăng bán NFT</li>\r   <ul>\r     <li>1. Đăng bán NFT bằng hàm listToken trong Market</li>\r     <li>2. Chú ý dùng ví đã tạo NFT để đăng bán</li>\r     <li>3. Sau khi đăng bán sẽ bị không thành công, lỗi \"ERC721: transfer caller is not owner nor approved\"</li>\r     <li>4. Lúc này cần cấp quyền cho chợ bằng hàm \"approve\" của SimpleNFT</li>\r     <li>4. Sau khi cấp quyền xong trở lại và đăng bán</li>\r   </ul>\r   <li>6. Có thể dùng 1 ví khác và cấp value đủ để mua NFT, hoặc gỡ NFT khỏi chợ</li>\r   <li>7. Để test bước 6, có thể xem chủ sở hữu NFT bằng hàm \"ownerOf\" trong SimpleNFT</li>\r </ul>\r <hr>\r <h2>Các Contract của dự án</h2>\r <h4>Simple NFT Contract</h4>\r <img src=\"./img/simple-NFT-contract.PNG\" alt=\"Simple NFT Contract\">\r <h4>Market Contract</h4>\r <img src=\"./img/market-contract.PNG\" alt=\"Simple NFT Contract\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeedCf/NFT-Market.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeedCf/NFT-Market/issues"
+  },
+  "homepage": "https://github.com/NeedCf/NFT-Market#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0"
+  }
+}
