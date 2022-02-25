@@ -15,7 +15,9 @@
   <ul>
     <li>$ const market = await Market.deployed();</li> 
     <li>$ await market.listToken(nft.address, <token Id>, {from: account[<owner of nft>]})</li> 
-    <li > <p style="color:red;">Error 'ERC721: transfer caller is not owner nor approved' </p></li> 
+    <li> 
+      <p style="color:red;">Error 'ERC721: transfer caller is not owner nor approved'</p>
+    </li> 
     <li>Approve to Market and repair list Token</li> 
     <ul>
       <li>Approve to Market </li>
