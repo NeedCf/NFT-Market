@@ -28,6 +28,10 @@
   <ul>
     <li>$ market.getListing(&lt;token Id&gt;)</li> 
   </ul>
-  
+  <li>Buy NFT in Market</li> 
+  <ul>
+    <li>if NFT.status == Active</li> 
+    <li>$ market.buyToken(&lt;token Id&gt;, {from: accounts[&lt;account buy nft&gt;], value: &lt;price of nft&gt;})</li> 
+  </ul>
 </ul>
 
