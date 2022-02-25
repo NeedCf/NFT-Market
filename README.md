@@ -9,12 +9,12 @@
   <li>Create NFT</li> 
   <ul>
     <li>$ const nft = await NFT.deployed();</li> 
-    <li>$ await nft.mint({from: account[<owner of nft>]})</li> 
+    <li>$ await nft.mint({from: account[&lt;owner of nft&gt;]})</li> 
   </ul>
   <li>List Token to Market</li> 
   <ul>
     <li>$ const market = await Market.deployed();</li> 
-    <li>$ await market.listToken(nft.address, /<token Id\>, {from: account[<owner of nft>]})</li> 
+    <li>$ await market.listToken(nft.address, <token Id>, {from: account[<owner of nft>]})</li> 
     <li>Error 'ERC721: transfer caller is not owner nor approved'</li> 
     <li>Approve to Market and repair list Token</li> 
     <ul>
