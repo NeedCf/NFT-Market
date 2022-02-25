@@ -26,12 +26,17 @@
   </ul>
   <li>Check NFT in Market</li> 
   <ul>
-    <li>$ market.getListing(&lt;token Id&gt;)</li> 
+    <li>$ market.getListing(&lt;token Id in market&gt;)</li> 
   </ul>
   <li>Buy NFT in Market</li> 
   <ul>
     <li>if NFT.status == Active</li> 
     <li>$ market.buyToken(&lt;token Id&gt;, {from: accounts[&lt;account buy nft&gt;], value: &lt;price of nft&gt;})</li> 
+  </ul>
+  <li>Cancel NFT in Market</li> 
+  <ul>
+    <li>if NFT.status == Active</li> 
+    <li>$ market.cancel(&lt;token Id in market&gt;, {from: accounts[&lt;account list nft to market&gt;]})</li> 
   </ul>
 </ul>
 
