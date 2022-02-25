@@ -23,7 +23,6 @@
       <li>Repair list Token </li>
       <li>$ await market.list(nft.address, <token Id>, {from: account[<owner of nft>]})</li>
     </ul>
-    <li>$ await nft.approve(market.address, <token Id>, {from: account[<owner of nft>]})</li> 
   </ul>
   <li>$ truffle console</li> 
   <li>$ truffle console</li> 
