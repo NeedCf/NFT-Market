@@ -25,6 +25,9 @@
     </ul>
   </ul>
   <li>Check NFT in Market</li> 
-  <li>$ market.getListing(<>)</li> 
+  <ul>
+    <li>$ market.getListing(&lt;token Id&gt;)</li> 
+  </ul>
+  
 </ul>
 
