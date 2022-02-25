@@ -44,11 +44,13 @@ contract Market {
     // Map chứa các NFT
     mapping(uint => Listing) private _listings;
 
+
+
     // Hàm thực hiện lệnh đưa token lên sàn
-    function listToken(address token, uint tokenId, uint price) external {
+    function listToken(address token, uint tokenId, uint price) external payable {
         // Chuyển NFT đến địa chỉ của Market
         IERC721(token).transferFrom(msg.sender, address(this), tokenId);
-
+        
         // Tạo một item 
         // Trạng thái NFT là Có thể mua
         // Địa chỉ người bán là ví của người thực hiện lệnh listToken
@@ -113,7 +115,9 @@ contract Market {
 
         // Chuyển tiền cho người bán token
         // Số tiền chuyển bằng với giá token lúc list sàn
-        payable(listing.seller).transfer(listing.price);
+        // Người mua nhận lại 99% giá trị của NFT, 1% sàn sẽ giữ
+        //      lại coi như là tiền phí
+        payable(listing.seller).transfer(listing.price * 99 / 100);
 
 
         // Thông báo event đã bán
