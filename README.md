@@ -14,14 +14,14 @@
   <li>List Token to Market</li> 
   <ul>
     <li>$ const market = await Market.deployed();</li> 
-    <li>$ await market.list(nft.address, <token Id>, {from: account[<owner of nft>]})</li> 
-    <li>Error 'ERC721: transfer caller is not owner nor approved'</li> 
+    <li>$ await market.listToken(nft.address, <token Id>, {from: account[<owner of nft>]})</li> 
+    <li style="color:red;">Error 'ERC721: transfer caller is not owner nor approved'</li> 
     <li>Approve to Market and repair list Token</li> 
     <ul>
       <li>Approve to Market </li>
       <li>$ await nft.approve(market.address, <token Id>, {from: account[<owner of nft>]})</li> 
       <li>Repair list Token </li>
-      <li>$ await market.list(nft.address, <token Id>, {from: account[<owner of nft>]})</li>
+      <li>$ await market.listToken(nft.address, <token Id>, {from: account[<owner of nft>]})</li>
     </ul>
   </ul>
   <li>$ truffle console</li> 
