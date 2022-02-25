@@ -6,5 +6,4 @@ module.exports = async function (deployer) {
   // await deployer.deploy(Migrations);
   await deployer.deploy(Market);
   await deployer.deploy(NFT);
-  
 };
